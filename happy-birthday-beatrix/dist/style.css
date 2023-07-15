@@ -1,0 +1,542 @@
+@import url("https://fonts.googleapis.com/css?family=Codystar|Quicksand:300,400,700");
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  color: #777;
+  background: #2d1b55;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: normal;
+}
+
+/*** <--- DEMO STYLES ---> ***/
+.wrapper {
+  position: relative;
+}
+
+#scene {
+  position: relative;
+  overflow: hidden;
+  width: 500px;
+  max-width: 100%;
+  min-height: 500px;
+  border-radius: 50%;
+  background: #41277C;
+}
+#scene::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.text h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+  line-height: 40px;
+  color: #EEEEFF;
+  text-shadow: 0 0 1px #41277C, 0 0 15px rgba(238, 238, 255, 0.85);
+}
+.text h2 {
+  font-weight: 700;
+  font-size: 2.5em;
+  color: #9FB798;
+}
+
+.snow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.snow .flake {
+  opacity: 0;
+  position: absolute;
+  top: -0.25rem;
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+.snow .flake:nth-child(1) {
+  left: 4%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 11241ms;
+          animation-delay: 11241ms;
+}
+.snow .flake:nth-child(2) {
+  left: 76%;
+  -webkit-animation: blow 17121ms ease-in infinite;
+          animation: blow 17121ms ease-in infinite;
+  -webkit-animation-delay: 268ms;
+          animation-delay: 268ms;
+}
+.snow .flake:nth-child(3) {
+  left: 12%;
+  -webkit-animation: blow 15784ms ease-in infinite;
+          animation: blow 15784ms ease-in infinite;
+  -webkit-animation-delay: 9717ms;
+          animation-delay: 9717ms;
+}
+.snow .flake:nth-child(4) {
+  left: 90%;
+  -webkit-animation: blow 18193ms ease-in infinite;
+          animation: blow 18193ms ease-in infinite;
+  -webkit-animation-delay: 5259ms;
+          animation-delay: 5259ms;
+}
+.snow .flake:nth-child(5) {
+  left: 30%;
+  -webkit-animation: blow 16127ms ease-in infinite;
+          animation: blow 16127ms ease-in infinite;
+  -webkit-animation-delay: 7617ms;
+          animation-delay: 7617ms;
+}
+.snow .flake:nth-child(6) {
+  left: 23%;
+  -webkit-animation: blow 15264ms ease-in infinite;
+          animation: blow 15264ms ease-in infinite;
+  -webkit-animation-delay: 8084ms;
+          animation-delay: 8084ms;
+}
+.snow .flake:nth-child(7) {
+  left: 25%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 11482ms;
+          animation-delay: 11482ms;
+}
+.snow .flake:nth-child(8) {
+  left: 93%;
+  -webkit-animation: blow 19897ms ease-in infinite;
+          animation: blow 19897ms ease-in infinite;
+  -webkit-animation-delay: 6426ms;
+          animation-delay: 6426ms;
+}
+.snow .flake:nth-child(9) {
+  left: 27%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 1741ms;
+          animation-delay: 1741ms;
+}
+.snow .flake:nth-child(10) {
+  left: 83%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 6383ms;
+          animation-delay: 6383ms;
+}
+.snow .flake:nth-child(11) {
+  left: 62%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 7570ms;
+          animation-delay: 7570ms;
+}
+.snow .flake:nth-child(12) {
+  left: 2%;
+  -webkit-animation: blow 19051ms ease-in infinite;
+          animation: blow 19051ms ease-in infinite;
+  -webkit-animation-delay: 9607ms;
+          animation-delay: 9607ms;
+}
+.snow .flake:nth-child(13) {
+  left: 53%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 6290ms;
+          animation-delay: 6290ms;
+}
+.snow .flake:nth-child(14) {
+  left: 29%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 8038ms;
+          animation-delay: 8038ms;
+}
+.snow .flake:nth-child(15) {
+  left: 99%;
+  -webkit-animation: blow 19276ms ease-in infinite;
+          animation: blow 19276ms ease-in infinite;
+  -webkit-animation-delay: 4843ms;
+          animation-delay: 4843ms;
+}
+.snow .flake:nth-child(16) {
+  left: 5%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 8672ms;
+          animation-delay: 8672ms;
+}
+.snow .flake:nth-child(17) {
+  left: 1%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 2703ms;
+          animation-delay: 2703ms;
+}
+.snow .flake:nth-child(18) {
+  left: 6%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 874ms;
+          animation-delay: 874ms;
+}
+.snow .flake:nth-child(19) {
+  left: 12%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 10911ms;
+          animation-delay: 10911ms;
+}
+.snow .flake:nth-child(20) {
+  left: 15%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 8037ms;
+          animation-delay: 8037ms;
+}
+.snow .flake:nth-child(21) {
+  left: 29%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 423ms;
+          animation-delay: 423ms;
+}
+.snow .flake:nth-child(22) {
+  left: 12%;
+  -webkit-animation: blow 18239ms ease-in infinite;
+          animation: blow 18239ms ease-in infinite;
+  -webkit-animation-delay: 11472ms;
+          animation-delay: 11472ms;
+}
+.snow .flake:nth-child(23) {
+  left: 36%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 11178ms;
+          animation-delay: 11178ms;
+}
+.snow .flake:nth-child(24) {
+  left: 75%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 8698ms;
+          animation-delay: 8698ms;
+}
+.snow .flake:nth-child(25) {
+  left: 88%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 5837ms;
+          animation-delay: 5837ms;
+}
+.snow .flake:nth-child(26) {
+  left: 98%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 8540ms;
+          animation-delay: 8540ms;
+}
+.snow .flake:nth-child(27) {
+  left: 56%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 284ms;
+          animation-delay: 284ms;
+}
+.snow .flake:nth-child(28) {
+  left: 82%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 9310ms;
+          animation-delay: 9310ms;
+}
+.snow .flake:nth-child(29) {
+  left: 1%;
+  -webkit-animation: blow 16479ms ease-in infinite;
+          animation: blow 16479ms ease-in infinite;
+  -webkit-animation-delay: 6160ms;
+          animation-delay: 6160ms;
+}
+.snow .flake:nth-child(30) {
+  left: 28%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 10576ms;
+          animation-delay: 10576ms;
+}
+.snow .flake:nth-child(31) {
+  left: 61%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 2869ms;
+          animation-delay: 2869ms;
+}
+.snow .flake:nth-child(32) {
+  left: 65%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 7986ms;
+          animation-delay: 7986ms;
+}
+.snow .flake:nth-child(33) {
+  left: 30%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 4929ms;
+          animation-delay: 4929ms;
+}
+.snow .flake:nth-child(34) {
+  left: 19%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 5265ms;
+          animation-delay: 5265ms;
+}
+.snow .flake:nth-child(35) {
+  left: 76%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 11713ms;
+          animation-delay: 11713ms;
+}
+.snow .flake:nth-child(36) {
+  left: 48%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 10232ms;
+          animation-delay: 10232ms;
+}
+.snow .flake:nth-child(37) {
+  left: 95%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 3589ms;
+          animation-delay: 3589ms;
+}
+.snow .flake:nth-child(38) {
+  left: 64%;
+  -webkit-animation: blow 15523ms ease-in infinite;
+          animation: blow 15523ms ease-in infinite;
+  -webkit-animation-delay: 7934ms;
+          animation-delay: 7934ms;
+}
+.snow .flake:nth-child(39) {
+  left: 4%;
+  -webkit-animation: blow 19644ms ease-in infinite;
+          animation: blow 19644ms ease-in infinite;
+  -webkit-animation-delay: 2269ms;
+          animation-delay: 2269ms;
+}
+.snow .flake:nth-child(40) {
+  left: 66%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 431ms;
+          animation-delay: 431ms;
+}
+.snow .flake:nth-child(41) {
+  left: 72%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 5035ms;
+          animation-delay: 5035ms;
+}
+.snow .flake:nth-child(42) {
+  left: 60%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 2086ms;
+          animation-delay: 2086ms;
+}
+.snow .flake:nth-child(43) {
+  left: 93%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 2143ms;
+          animation-delay: 2143ms;
+}
+.snow .flake:nth-child(44) {
+  left: 65%;
+  -webkit-animation: blow 16930ms ease-in infinite;
+          animation: blow 16930ms ease-in infinite;
+  -webkit-animation-delay: 9898ms;
+          animation-delay: 9898ms;
+}
+.snow .flake:nth-child(45) {
+  left: 23%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 10526ms;
+          animation-delay: 10526ms;
+}
+.snow .flake:nth-child(46) {
+  left: 93%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 6096ms;
+          animation-delay: 6096ms;
+}
+.snow .flake:nth-child(47) {
+  left: 45%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 270ms;
+          animation-delay: 270ms;
+}
+.snow .flake:nth-child(48) {
+  left: 36%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 1215ms;
+          animation-delay: 1215ms;
+}
+.snow .flake:nth-child(49) {
+  left: 69%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 6402ms;
+          animation-delay: 6402ms;
+}
+.snow .flake:nth-child(50) {
+  left: 75%;
+  -webkit-animation: blow 15000ms ease-in infinite;
+          animation: blow 15000ms ease-in infinite;
+  -webkit-animation-delay: 1355ms;
+          animation-delay: 1355ms;
+}
+
+.tree {
+  position: relative;
+  position: absolute;
+}
+.tree::before, .tree::after {
+  content: "";
+  position: absolute;
+}
+.tree.one {
+  bottom: 30%;
+  left: 47%;
+  opacity: 0.7;
+}
+.tree.two {
+  transform: scale(0.8);
+  bottom: 28%;
+  left: 80%;
+  opacity: 0.4;
+}
+.tree.three {
+  transform: scale(0.6);
+  bottom: 26%;
+  left: 70%;
+  opacity: 0.2;
+}
+.tree.four {
+  transform: scale(0.8);
+  bottom: 28%;
+  left: 20%;
+  opacity: 0.5;
+}
+.tree.five {
+  transform: scale(0.6);
+  bottom: 26%;
+  left: 38%;
+  opacity: 0.2;
+}
+.tree::before {
+  border: 20px solid transparent;
+  border-bottom: 30px solid #EEEEFF;
+}
+.tree::after {
+  top: -10px;
+  border: 20px solid transparent;
+  border-bottom: 30px solid #EEEEFF;
+}
+
+.platform {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 100px;
+  padding-top: 50px;
+  background: #2d1b55;
+  border-radius: 0 0 5px 5px;
+}
+.platform::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: #9FB4C7;
+  border-radius: 0 0 5px 5px;
+}
+.platform .quote {
+  padding: 0 1rem;
+  font-family: "Codystar", cursive;
+  font-size: 1.8em;
+  text-align: center;
+  line-height: 1.4;
+  color: #9FB798;
+}
+
+@-webkit-keyframes blow {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  20% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.5;
+    transform: translate(0, 500px);
+  }
+}
+
+@keyframes blow {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  20% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.5;
+    transform: translate(0, 500px);
+  }
+}
+@media all and (max-width: 520px) {
+  .wrapper {
+    transform: scale(0.6);
+  }
+}
